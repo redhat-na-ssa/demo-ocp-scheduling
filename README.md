@@ -1,4 +1,12 @@
-# Pod Priority
+# PriorityClass Demo
+
+## Quick Start
+
+<!-- ```sh
+oc apply -k demo
+``` -->
+
+## Notes
 
 Before you set up PriorityClasses, there are a few things to consider.
 
