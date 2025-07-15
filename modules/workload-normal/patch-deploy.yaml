@@ -6,7 +6,6 @@ metadata:
     run: priority-normal
   name: workload
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: priority-normal
@@ -19,5 +18,5 @@ spec:
         - name: minion
           resources:
             limits:
-              cpu: '2'
+              cpu: '1'
               memory: 2400Mi

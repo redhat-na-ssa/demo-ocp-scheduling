@@ -20,9 +20,8 @@ spec:
           --aggressive \
           --cpu 0 \
           --vm 1 \
-          --vm-bytes 100% \
-          --oom-avoid \
-          --timeout 1h \
+          --vm-bytes 85% \
+          --timeout 3m \
           --metrics
 
     resources:
