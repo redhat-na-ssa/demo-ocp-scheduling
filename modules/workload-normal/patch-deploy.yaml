@@ -19,5 +19,5 @@ spec:
         - name: minion
           resources:
             limits:
-              cpu: '1'
+              cpu: '2'
               memory: 2400Mi
