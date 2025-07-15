@@ -3,3 +3,11 @@ kind: Component
 
 components:
   - ../pod-stress
+
+patches:
+  - target:
+      kind: Pod
+    patch: |-
+      - op: replace
+        path: /metadata/name
+        value: workload-high

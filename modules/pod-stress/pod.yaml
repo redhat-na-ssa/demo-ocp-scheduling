@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   labels:
     run: priority-high
-  name: priority-high
+  name: workload
 spec:
   restartPolicy: Never
   containers:
@@ -27,6 +27,6 @@ spec:
 
     resources:
       limits:
-        cpu: '2'
+        cpu: '1'
         memory: 2Gi
   priorityClassName: openshift-user-critical
