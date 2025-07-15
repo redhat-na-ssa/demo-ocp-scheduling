@@ -1,0 +1,16 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+components:
+  - ../workload
+
+patches:
+  - path: patch-deploy.yaml
+    target:
+      kind: Deployment
+  - path: patch-ds.yaml
+    target:
+      kind: DaemonSet
+  - path: patch-pod.yaml
+    target:
+      kind: Pod

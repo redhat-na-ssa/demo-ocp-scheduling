@@ -1,0 +1,16 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    qos: guaranteed
+  name: workload
+spec:
+  template:
+    spec:
+      containers:
+        - name: minion
+          resources:
+            limits:
+              cpu: '1'
+              memory: 2400Mi

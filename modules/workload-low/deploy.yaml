@@ -19,4 +19,5 @@ spec:
         resources:
           limits:
             cpu: '2'
+            memory: 2400Mi
       priorityClassName: priority-low

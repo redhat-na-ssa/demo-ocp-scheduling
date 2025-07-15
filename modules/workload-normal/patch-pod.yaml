@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  labels:
+    app: priority-normal
+  name: workload
+spec:
+  containers:
+  - name: minion

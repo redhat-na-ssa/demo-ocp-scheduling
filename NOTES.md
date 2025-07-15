@@ -50,4 +50,53 @@ spec:
       type: Queue
 ```
 
-  - https://www.redhat.com/en/blog/surviving-the-api-storm-with-api-priority-fairness
+- https://www.redhat.com/en/blog/surviving-the-api-storm-with-api-priority-fairness
+
+## Quality of Service for Pods
+
+Types of classes:
+
+Guaranteed
+
+```yaml
+kind: Pod
+apiVersion: v1
+spec:
+  containers:
+    - resources:
+        limits:
+          cpu: '1'
+          memory: 2400Mi
+status:
+  qosClass: Guaranteed
+```
+
+Burstable
+
+```yaml
+kind: Pod
+apiVersion: v1
+spec:
+  containers:
+    - resources:
+        requests:
+          cpu: '1'
+          memory: 2400Mi
+status:
+  qosClass: Burstable
+```
+
+BestEffort
+
+```yaml
+kind: Pod
+apiVersion: v1
+spec:
+  containers:
+    - resources: {}
+
+status:
+  qosClass: BestEffort
+```
+
+- https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod

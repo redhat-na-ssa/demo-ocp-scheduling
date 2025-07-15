@@ -16,9 +16,21 @@ spec:
 
         # https://github.com/ColinIanKing/stress-ng
 
-        stress-ng --aggressive --matrix -1 --tz --metrics
+        stress-ng --help
+
+        stress-ng \
+          --aggressive \
+          --cpu 0 \
+          --vm 1 \
+          --vm-bytes 100% \
+          --oom-avoid \
+          --timeout 1h \
+          --metrics
+
+        sleep 5
 
     resources:
       limits:
         cpu: '2'
+        memory: 2Gi
   priorityClassName: openshift-user-critical

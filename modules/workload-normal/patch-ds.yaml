@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    run: priority-normal
+  name: workload
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: priority-normal
+  template:
+    metadata:
+      labels:
+        app: priority-normal
+    spec:
+      containers:
+        - name: minion
+          resources:
+            limits:
+              cpu: '1'
+              memory: 2400Mi
