@@ -16,8 +16,6 @@ spec:
 
         # https://github.com/ColinIanKing/stress-ng
 
-        stress-ng --help
-
         stress-ng \
           --aggressive \
           --cpu 0 \
@@ -26,8 +24,6 @@ spec:
           --oom-avoid \
           --timeout 1h \
           --metrics
-
-        sleep 5
 
     resources:
       limits:
