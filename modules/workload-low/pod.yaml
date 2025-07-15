@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  labels:
+    run: priority-low
+  name: priority-low
+spec:
+  containers:
+  - image: ghcr.io/codekow/xmrig
+    name: minion
+    resources:
+      limits:
+        cpu: '2'
+  priorityClassName: priority-low

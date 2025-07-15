@@ -7,7 +7,7 @@ spec:
   hard:
     # requests.cpu: '1'
     # requests.memory: 1Gi
-    limits.cpu: '12'
+    limits.cpu: '16'
     limits.memory: 32Gi
     requests.nvidia.com/gpu: '0'
 ---

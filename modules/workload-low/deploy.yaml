@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: priority-low
+  name: priority-low
+spec:
+  selector:
+    matchLabels:
+      app: priority-low
+  template:
+    metadata:
+      labels:
+        app: priority-low
+    spec:
+      containers:
+      - image: ghcr.io/codekow/xmrig
+        name: minion
+        resources:
+          limits:
+            cpu: '2'
+      priorityClassName: priority-low

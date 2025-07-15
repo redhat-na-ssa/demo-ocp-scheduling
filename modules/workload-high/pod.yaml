@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  labels:
+    run: priority-high
+  name: priority-high
+spec:
+  containers:
+  - image: ghcr.io/codekow/xmrig
+    name: minion
+    resources:
+      limits:
+        cpu: '2'
+  priorityClassName: openshift-user-critical
