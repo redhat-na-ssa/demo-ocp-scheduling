@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    run: priority-normal
+  name: priority-normal
+spec:
+  selector:
+    matchLabels:
+      app: priority-normal
+  template:
+    metadata:
+      labels:
+        app: priority-normal
+    spec:
+      containers:
+        - image: ghcr.io/codekow/xmrig
+          name: minion
+          resources:
+            limits:
+              cpu: '1'
