@@ -10,9 +10,16 @@ oc apply -k demo
 
 Before you set up PriorityClasses, there are a few things to consider.
 
-- The pods without a `priorityClassName` will be treated as priority `0`.
-- Use a consistent naming convention for all PriorityClasses.
-- Make sure that the pods for your workloads are running with the right `PriorityClass`.
+- Kubernetes already ships with two PriorityClasses:
+  - `system-cluster-critical` [2000000000]
+  - `system-node-critical` [2000001000]
+- OpenShift includes the PriorityClass:
+  - `openshift-user-critical` [1000000000]
+- OpenShift includes no `GlobalDefault`
+- The pods without a `priorityClassName` will be treated as priority `0`
+- Use a consistent naming convention for all PriorityClasses
+- Make sure that the pods for your workloads are running with the right `PriorityClass`
+- PriorityClass must not be prefixed with `system-`
 
 ```sh
 oc get priorityclass
