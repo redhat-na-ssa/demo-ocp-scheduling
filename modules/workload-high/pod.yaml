@@ -6,8 +6,18 @@ metadata:
   name: priority-high
 spec:
   containers:
-  - image: ghcr.io/codekow/xmrig
+  - image: ghcr.io/colinianking/stress-ng
     name: minion
+    command:
+      - "/bin/bash"
+      - "-c"
+      - |
+        #!/bin/bash
+
+        # https://github.com/ColinIanKing/stress-ng
+
+        stress-ng --aggressive --matrix -1 --tz --metrics
+
     resources:
       limits:
         cpu: '2'
