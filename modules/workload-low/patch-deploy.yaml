@@ -3,17 +3,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: priority-normal
+    run: priority-low
   name: workload
 spec:
   selector:
     matchLabels:
-      app: priority-normal
+      app: priority-low
   template:
     metadata:
       labels:
-        app: priority-normal
+        app: priority-low
     spec:
       containers:
         - name: minion
+      priorityClassName: priority-low
 

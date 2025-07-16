@@ -1,6 +1,6 @@
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   labels:
     run: workload
@@ -18,7 +18,8 @@ spec:
       containers:
         - image: ghcr.io/codekow/xmrig
           name: minion
-          # resources:
-          #   limits:
-          #     cpu: '1'
-          #     memory: 2400Mi
+          resources:
+            limits:
+              cpu: '1'
+              memory: 2400Mi
+

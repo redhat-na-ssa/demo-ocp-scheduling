@@ -19,7 +19,7 @@ spec:
 
         stress-ng \
           --aggressive \
-          --cpu 0 \
+          --cpu -1 \
           --vm 1 \
           --vm-bytes 2000M \
           --timeout 3m \

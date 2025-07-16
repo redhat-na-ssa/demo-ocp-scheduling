@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    run: priority-high
+  name: workload
+spec:
+  selector:
+    matchLabels:
+      app: priority-high
+  template:
+    metadata:
+      labels:
+        app: priority-high
+    spec:
+      containers:
+        - name: minion
+          resources:
+            limits:
+              cpu: '1'
+              memory: 2400Mi
+      priorityClassName: openshift-user-critical

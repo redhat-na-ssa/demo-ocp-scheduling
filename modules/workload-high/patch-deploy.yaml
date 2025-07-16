@@ -1,21 +1,20 @@
 ---
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
   labels:
-    run: workload
+    run: priority-high
   name: workload
 spec:
-  replicas: 0
   selector:
     matchLabels:
-      app: workload
+      app: priority-high
   template:
     metadata:
       labels:
-        app: workload
+        app: priority-high
     spec:
       containers:
-        - image: ghcr.io/codekow/xmrig
-          name: minion
+        - name: minion
+      priorityClassName: openshift-user-critical
 

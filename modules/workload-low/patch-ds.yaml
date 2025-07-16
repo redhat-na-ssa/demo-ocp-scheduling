@@ -1,9 +1,10 @@
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   labels:
     run: priority-low
-  name: priority-low
+  name: workload
 spec:
   selector:
     matchLabels:
@@ -14,9 +15,9 @@ spec:
         app: priority-low
     spec:
       containers:
-      - image: ghcr.io/codekow/xmrig
-        name: minion
-        resources:
-          limits:
-            cpu: '2'
+        - name: minion
+          resources:
+            limits:
+              cpu: '1'
+              memory: 2400Mi
       priorityClassName: priority-low
