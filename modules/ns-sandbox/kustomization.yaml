@@ -4,7 +4,8 @@ kind: Kustomization
 namespace: sandbox
 
 resources:
-  # - limit-range.yaml
+  - limit-range.yaml
+  - link-ns.yaml
   - namespace.yaml
   - quota.yaml
   - rolebinding-edit.yaml

@@ -4,5 +4,5 @@ description: This priority class should be used for very low priority workloads 
 kind: PriorityClass
 metadata:
   name: priority-low
-preemptionPolicy: PreemptLowerPriority
-value: -1000000000
+preemptionPolicy: Never
+value: -1000

@@ -3,5 +3,5 @@ kind: Component
 
 resources:
   - deploy.yaml
-  - ds.yaml
-  - pod.yaml
+  # - ds.yaml
+  # - pod.yaml

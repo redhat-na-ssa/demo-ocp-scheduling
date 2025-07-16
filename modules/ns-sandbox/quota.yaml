@@ -28,4 +28,4 @@ spec:
   hard:
     count/sealedsecrets.bitnami.com: '0'
     count/cronjobs.batch: '4'
-    count/daemonsets.apps: '2'
+    count/daemonsets.apps: '3'

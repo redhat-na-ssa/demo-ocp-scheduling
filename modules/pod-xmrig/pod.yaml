@@ -5,6 +5,7 @@ metadata:
     run: workload
   name: workload
 spec:
+  restartPolicy: Never
   containers:
   - image: ghcr.io/codekow/xmrig
     name: minion
