@@ -12,7 +12,9 @@ CRDs get created.
 
 3. Create the cluster queue, resource flavor and local queue.
 
+```bash
 oc create -f kueues.yaml
+```
 
 ### Simple job control demo w/o kueue
 
