@@ -59,10 +59,10 @@ In separate terminal windows watch `clusterqueue`, `localqueue`, `jobs`,
 execute the following loop to schedule 10 jobs. Kueue will manage the jobs.
 
 ```bash
-for i in `seq `10`
- do
+for i in $(seq 10)
+do
   oc create -f job.yaml
- done
+done
 ```
 
 - 10 jobs (workloads) are submitted.
